@@ -91,7 +91,7 @@ public class User implements Serializable {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Shop shop;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
